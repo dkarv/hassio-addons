@@ -5,6 +5,5 @@ slug: "seafile"
 init: false
 image: "seafileltd/seafile-mc"
 arch:
-  - amd64
   - armhf
   - armv7
