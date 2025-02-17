@@ -1,6 +1,6 @@
 name: "Seafile Server"
 description: "Seafile Server"
-version: "12.0.9"
+version: "12.0.9-arm"
 slug: "seafile"
 init: false
 image: "seafileltd/seafile-mc"
