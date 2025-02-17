@@ -1,9 +1,8 @@
 name: "Seafile Server"
 description: "Seafile Server"
-version: "12.0.9-arm"
+version: "12.0.9-0"
 slug: "seafile"
 init: false
-image: "seafileltd/seafile-mc"
 arch:
   - armv7
 options:
