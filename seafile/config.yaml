@@ -7,3 +7,8 @@ image: "seafileltd/seafile-mc"
 arch:
   - armhf
   - armv7
+options:
+  - PORT: 8200
+ports:
+  - "80/tcp": 8200
+webui: "http://[HOST]:[PORT:8200]"
