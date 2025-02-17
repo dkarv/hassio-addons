@@ -1,0 +1,2 @@
+build_from:
+  armv7: seafileltd/seafile-mc:12.0.9-arm
