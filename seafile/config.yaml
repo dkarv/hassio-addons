@@ -8,11 +8,17 @@ arch:
   - armhf
   - armv7
 options:
-  PORT: "8200"
+  PORT: 8200
   DB_HOST: "core-mariadb"
   DB_USER: "seafile"
   DB_PASSWORD: "seafile"
   SEAFILE_MYSQL_DB_SEAFILE_DB_NAME: "seafile"
+schema:
+  PORT: "int"
+  DB_HOST: "str"
+  DB_USER: "str"
+  DB_PASSWORD: "str"
+  SEAFILE_MYSQL_DB_SEAFILE_DB_NAME: "str"
 #  TIME_ZONE: ${TIME_ZONE:-Etc/UTC}
 #  INIT_SEAFILE_ADMIN_EMAIL=${INIT_SEAFILE_ADMIN_EMAIL:-me@example.com}
 #  INIT_SEAFILE_ADMIN_PASSWORD=${INIT_SEAFILE_ADMIN_PASSWORD:-asecret}
