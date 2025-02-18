@@ -33,5 +33,5 @@ schema:
   server_path: "str"
   enable_seadoc: "bool"
 ports:
-  "80/tcp": [PORT]
+  "80/tcp": 8200
 webui: "http://[HOST]:[PORT:8200]"
