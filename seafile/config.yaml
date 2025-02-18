@@ -7,7 +7,7 @@ arch:
   - armv7
   - aarch64
 options:
-  port: 8200
+  PORT: 8200
   db_host: "core-mariadb"
   db_port: 3306
   db_user: "seafile"
@@ -20,7 +20,7 @@ options:
   server_path: "/"
   enable_seadoc: true
 schema:
-  port: "int"
+  PORT: "int"
   db_host: "str"
   db_port: "int"
   db_user: "str"
@@ -33,5 +33,5 @@ schema:
   server_path: "str"
   enable_seadoc: "bool"
 ports:
-  "80/tcp": [port]
-webui: "http://[HOST]:[port:8200]"
+  "80/tcp": [PORT]
+webui: "http://[HOST]:[PORT:8200]"
