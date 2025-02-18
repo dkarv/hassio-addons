@@ -1,35 +1,37 @@
 name: "Seafile Server"
 description: "Seafile Server"
-version: "12.0.9-4"
+version: "12.0.9-5"
 slug: "seafile"
 init: false
 arch:
   - armv7
   - aarch64
 options:
-  PORT: 8200
-  DB_HOST: "core-mariadb"
-  DB_USER: "seafile"
-  DB_PASSWORD: "seafile"
-  DB_NAME: "seafile"
-  ADMIN_EMAIL: "me@example.com"
-  ADMIN_PASSWORD: "seafile"
+  port: 8200
+  db_host: "core-mariadb"
+  db_port: 3306
+  db_user: "seafile"
+  db_password: "seafile"
+  db_name: "seafile"
+  admin_email: "me@example.com"
+  admin_password: "secret"
+  server_hostname: "homeassistant.local"
+  server_protocol: "http"
+  server_path: "/"
+  enable_seadoc: true
 schema:
-  PORT: "int"
-  DB_HOST: "str"
-  DB_USER: "str"
-  DB_PASSWORD: "str"
-  DB_NAME: "str"
-  ADMIN_EMAIL: "str"
-  ADMIN_PASSWORD: "str"
-#  SEAFILE_SERVER_HOSTNAME=${SEAFILE_SERVER_HOSTNAME:?Variable is not set or empty}
-#  SEAFILE_SERVER_PROTOCOL=${SEAFILE_SERVER_PROTOCOL:-http}
-#  SITE_ROOT=${SITE_ROOT:-/}
-#  NON_ROOT=${NON_ROOT:-false}
-#  JWT_PRIVATE_KEY=${JWT_PRIVATE_KEY:?Variable is not set or empty}
-#  SEAFILE_LOG_TO_STDOUT=${SEAFILE_LOG_TO_STDOUT:-false}
-#  ENABLE_SEADOC=${ENABLE_SEADOC:-true}
-#  SEADOC_SERVER_URL=${SEAFILE_SERVER_PROTOCOL:-http}://${SEAFILE_SERVER_HOSTNAME:?Variable is not set or empty}/sdoc-server
+  port: "int"
+  db_host: "str"
+  db_port: "int"
+  db_user: "str"
+  db_password: "str"
+  db_name: "str"
+  admin_email: "str"
+  admin_password: "str"
+  server_hostname: "str"
+  server_protocol: "str"
+  server_path: "str"
+  enable_seadoc: "bool"
 ports:
-  "80/tcp": 8200
-webui: "http://[HOST]:[PORT:8200]"
+  "80/tcp": [port]
+webui: "http://[HOST]:[port:8200]"
