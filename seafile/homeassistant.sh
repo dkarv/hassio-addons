@@ -1,20 +1,20 @@
 #!/usr/bin/env bashio
 
-bashio::log.info "Starting seafile..."
+bashio::log.info "Exporting configuration..."
 
-export DB_HOST=$(bashio::config 'db_host')
-export DB_PORT=$(bashio::config 'db_port')
-export DB_USER=$(bashio::config 'db_user')
-export DB_PASSWORD=$(bashio::config 'db_password')
-export SEAFILE_MYSQL_DB_SEAFILE_DB_NAME=$(bashio::config 'db_name')
-export INIT_SEAFILE_ADMIN_EMAIL=$(bashio::config 'admin_email')
-export INIT_SEAFILE_ADMIN_PASSWORD=$(bashio::config 'admin_password')
-export SEAFILE_SERVER_HOSTNAME=$(bashio::config 'server_hostname')
-export SEAFILE_SERVER_PROTOCOL=$(bashio::config 'server_protocol')
-export SITE_ROOT=$(bashio::config 'server_path')
-#export SEAFILE_LOG_TO_STDOUT=true
-export ENABLE_SEADOC=$(bashio::config 'enable_seadoc')
+bashio::config 'db_host' > /etc/container_environment/DB_HOST
+bashio::config 'db_port' > /etc/container_environment/DB_PORT
+bashio::config 'db_user' > /etc/container_environment/DB_USER
+bashio::config 'db_password' > /etc/container_environment/DB_PASSWORD
+bashio::config 'db_name' > /etc/container_environment/SEAFILE_MYSQL_DB_SEAFILE_DB_NAME
+bashio::config 'admin_email' > /etc/container_environment/INIT_SEAFILE_ADMIN_EMAIL
+bashio::config 'admin_password' > /etc/container_environment/INIT_SEAFILE_ADMIN_PASSWORD
+bashio::config 'server_hostname' > /etc/container_environment/SEAFILE_SERVER_HOSTNAME
+bashio::config 'server_protocol' > /etc/container_environment/SEAFILE_SERVER_PROTOCOL
+bashio::config 'server_path' > /etc/container_environment/SITE_ROOT
+#echo "true" > /etc/container_environment/SEAFILE_LOG_TO_STDOUT=true
+bashio::config 'enable_seadoc' > /etc/container_environment/ENABLE_SEADOC
 
-env
+bashio::log.info "Starting seafile"
 
 "/sbin/my_init" "--" "/scripts/enterpoint.sh"
