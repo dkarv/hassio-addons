@@ -15,6 +15,6 @@ export SITE_ROOT=$(bashio::config 'server_path')
 #export SEAFILE_LOG_TO_STDOUT=true
 export ENABLE_SEADOC=$(bashio::config 'enable_seadoc')
 
-bashio::log.info "Environment: ${env}"
+env
 
 "/sbin/my_init" "--" "/scripts/enterpoint.sh"
