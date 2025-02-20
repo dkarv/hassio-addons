@@ -1,0 +1,13 @@
+{
+  "db_host": "host",
+  "db_port": 3306,
+  "db_user": "user",
+  "db_password": "password",
+  "db_name": "name",
+  "admin_email": "me@example.net",
+  "admin_password": "homeassistant",
+  "server_hostname": "server",
+  "server_protocol": "http",
+  "server_path": "/",
+  "enable_seadoc": true
+}

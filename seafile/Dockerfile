@@ -9,6 +9,9 @@ RUN curl -J -L -o /tmp/bashio.tar.gz "https://github.com/hassio-addons/bashio/ar
     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
     && apt-get install -y jq
 
+# For local development
+# COPY dev/options.json /tmp/.bashio/addons.self.options.config.cache
+
 COPY homeassistant.sh /scripts/homeassistant.sh
 
 CMD ["/scripts/homeassistant.sh"]
