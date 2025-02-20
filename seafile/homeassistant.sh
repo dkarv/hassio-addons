@@ -8,6 +8,7 @@ echo "$(bashio::config 'db_host')" > /etc/container_environment/DB_HOST
 echo "$(bashio::config 'db_port')" > /etc/container_environment/DB_PORT
 echo "$(bashio::config 'db_user')" > /etc/container_environment/DB_USER
 echo "$(bashio::config 'db_password')" > /etc/container_environment/DB_PASSWORD
+echo "$(bashio::config 'db_password')" > /etc/container_environment/MYSQL_ROOT_PASSWD
 echo "$(bashio::config 'db_name')" > /etc/container_environment/SEAFILE_MYSQL_DB_SEAFILE_DB_NAME
 echo "$(bashio::config 'admin_email')" > /etc/container_environment/INIT_SEAFILE_ADMIN_EMAIL
 echo "$(bashio::config 'admin_password')" > /etc/container_environment/INIT_SEAFILE_ADMIN_PASSWORD
