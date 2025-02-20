@@ -1,6 +1,6 @@
 name: "Seafile Server"
 description: "Seafile Server"
-version: "12.0.9-11"
+version: "12.0.9-12"
 slug: "seafile"
 init: false
 arch:
