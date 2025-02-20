@@ -18,6 +18,7 @@ echo "$(bashio::config 'server_path')" > /etc/container_environment/SITE_ROOT
 echo "$(bashio::config 'enable_seadoc')" > /etc/container_environment/ENABLE_SEADOC
 # TODO set to true if homeassistant in debug mode
 echo "true" > /etc/container_environment/SEAFILE_DOCKER_VERBOSE
+echo "true" > /etc/container_environment/USE_EXISTING_DB
 
 bashio::log.info "Adjusting configuration"
 
