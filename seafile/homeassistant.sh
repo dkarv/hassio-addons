@@ -36,6 +36,7 @@ echo "1" > /etc/container_environment/USE_EXISTING_DB
 #git config --file=$CONF_FILE database.password "$(bashio::config 'db_password')"
 
 bashio::log.info "Mounting folder"
+mkdir -p /shared
 ln -s "$(bashio::config 'storage_path')" /shared/seafile
 
 bashio::log.info "Starting seafile"
