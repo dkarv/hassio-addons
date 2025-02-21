@@ -1,6 +1,6 @@
 name: "Seafile Server"
 description: "Seafile Server"
-version: "12.0.9-19"
+version: "12.0.9-21"
 slug: "seafile"
 init: false
 arch:
@@ -21,6 +21,7 @@ options:
   server_hostname: "homeassistant.local"
   server_protocol: "http"
   server_path: "/"
+  storage_path: "/media/data"
 schema:
   PORT: "int"
   db_host: "str"
@@ -36,6 +37,10 @@ schema:
   server_hostname: "str"
   server_protocol: "str"
   server_path: "str"
+  storage_path: "str"
 ports:
   "80/tcp": 8200
 webui: "http://[HOST]:[PORT:8200]"
+map:
+  - "share:rw"
+  - "media:rw"
