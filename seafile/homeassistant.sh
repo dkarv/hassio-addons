@@ -26,13 +26,17 @@ echo "true" > /etc/container_environment/SEAFILE_DOCKER_VERBOSE
 echo "true" > /etc/container_environment/USE_EXISTING_DB
 echo "1" > /etc/container_environment/USE_EXISTING_DB
 
-bashio::log.info "Adjusting configuration"
+
+#bashio::log.info "Adjusting configuration"
 
 #mkdir -p /opt/seafile/conf/
 #git config --file=$CONF_FILE database.host "$(bashio::config 'db_host')"
 #git config --file=$CONF_FILE database.port "$(bashio::config 'db_port')"
 #git config --file=$CONF_FILE database.user "$(bashio::config 'db_user')"
 #git config --file=$CONF_FILE database.password "$(bashio::config 'db_password')"
+
+bashio::log.info "Mounting folder"
+ln -s /shared/seafile "$(bashio::config 'storage_path')"
 
 bashio::log.info "Starting seafile"
 
