@@ -15,6 +15,7 @@ echo "$(bashio::config 'db_ccnet_name')" > /etc/container_environment/SEAFILE_MY
 echo "$(bashio::config 'db_seahub_name')" > /etc/container_environment/SEAFILE_MYSQL_DB_SEAHUB_DB_NAME
 echo "$(bashio::config 'admin_email')" > /etc/container_environment/INIT_SEAFILE_ADMIN_EMAIL
 echo "$(bashio::config 'admin_password')" > /etc/container_environment/INIT_SEAFILE_ADMIN_PASSWORD
+echo "$(bashio::config 'jwt_private_key')" > /etc/container_environment/JWT_PRIVATE_KEY
 echo "$(bashio::config 'server_hostname')" > /etc/container_environment/SEAFILE_SERVER_HOSTNAME
 echo "$(bashio::config 'server_protocol')" > /etc/container_environment/SEAFILE_SERVER_PROTOCOL
 echo "$(bashio::config 'server_path')" > /etc/container_environment/SITE_ROOT

@@ -1,6 +1,6 @@
 name: "Seafile Server"
 description: "Seafile Server"
-version: "12.0.9-18"
+version: "12.0.9-19"
 slug: "seafile"
 init: false
 arch:
@@ -17,6 +17,7 @@ options:
   db_seahub_name: "seafile_seahub"
   admin_email: "me@example.com"
   admin_password: "secret"
+  jwt_private_key: "secretkey"
   server_hostname: "homeassistant.local"
   server_protocol: "http"
   server_path: "/"
@@ -31,6 +32,7 @@ schema:
   db_seahub_name: "str"
   admin_email: "str"
   admin_password: "str"
+  jwt_private_key: "str"
   server_hostname: "str"
   server_protocol: "str"
   server_path: "str"
