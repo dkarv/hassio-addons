@@ -1,6 +1,6 @@
 name: "Collabora CODE"
 description: "Collabora CODE"
-version: ""
+version: "24.04.5.1.1-0"
 slug: "collabora"
 init: false
 arch:
