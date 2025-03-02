@@ -1,0 +1,25 @@
+name: "Collabora CODE"
+description: "Collabora CODE"
+version: ""
+slug: "collabora"
+init: false
+arch:
+  - armv7
+  - aarch64
+options:
+  PORT: 9980
+  admin_username: "admin"
+  admin_password: "homeassistant"
+  server_hostname: "homeassistant.local"
+  dictionaries: "de_DE en_GB en_US es_ES ffr_FR it nl pt_BR pt_PT ru"
+  extra_params: "--o:ssl.enable=false"
+schema:
+  PORT: "int"
+  admin_username: "str"
+  admin_password: "str"
+  server_hostname: "str"
+  dictionaries: "str"
+  extra_params: "str"
+ports:
+  "9980/tcp": 9980
+webui: "http://[HOST]:[PORT:9980]"
