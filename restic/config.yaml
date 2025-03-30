@@ -1,0 +1,26 @@
+name: "Restic"
+description: "Restic Backup"
+version: "0.18.0-0"
+slug: "restic"
+init: false
+startup: "once"
+boot: "manual"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+schema:
+  databases:
+  - name: "str"
+    user: "str"
+    password: "str"
+  folders:
+  - path: "str"
+  backup_password: "str"
+  backup_target: "str"
+map:
+  - "share:ro"
+  - "media:ro"
+  - "backup:ro"
