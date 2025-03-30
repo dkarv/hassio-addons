@@ -1,0 +1,11 @@
+{
+  "databases": [{
+    "name": "db_name",
+    "user": "db_user",
+    "password": "db_pw"
+  }],
+  "folders": [{
+    "path": "/tmp/test"
+  }],
+  "target": "/todo"
+}
