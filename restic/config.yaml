@@ -1,6 +1,6 @@
 name: "Restic"
 description: "Restic Backup"
-version: "0.18.0-2"
+version: "0.18.0-3"
 slug: "restic"
 init: false
 startup: "once"
@@ -11,15 +11,19 @@ arch:
   - aarch64
   - amd64
   - i386
+options:
+  backup_directories:
+    - "/media"
+    - "/backup"
 schema:
-  databases:
-    - name: "str"
-      user: "str"
-      password: "str"
-  folders:
-    - path: "str"
-  backup_password: "str"
-  backup_target: "str"
+  database_user: str
+  database_password: str
+  database_names:
+    - str
+  backup_directories:
+    - str
+  backup_password: str
+  backup_target: str
 map:
   - "share:ro"
   - "media:ro"
