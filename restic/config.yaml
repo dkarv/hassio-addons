@@ -1,6 +1,6 @@
 name: "Restic"
 description: "Restic Backup"
-version: "0.18.0-0"
+version: "0.18.0-1"
 slug: "restic"
 init: false
 startup: "once"
@@ -13,11 +13,11 @@ arch:
   - i386
 schema:
   databases:
-  - name: "str"
-    user: "str"
-    password: "str"
+    - name: "str"
+      user: "str"
+      password: "str"
   folders:
-  - path: "str"
+    - path: "str"
   backup_password: "str"
   backup_target: "str"
 map:

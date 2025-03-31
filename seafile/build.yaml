@@ -1,3 +1,4 @@
 build_from:
-  armv7: seafileltd/seafile-mc:12.0.11-arm
-  aarch64: seafileltd/seafile-mc:12.0.11-arm
+  armv7: seafileltd/seafile-mc:12.0.11
+  aarch64: seafileltd/seafile-mc:12.0.11
+  amd64: seafileltd/seafile-mc:12.0.11

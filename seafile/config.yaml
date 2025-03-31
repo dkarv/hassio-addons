@@ -6,6 +6,7 @@ init: false
 arch:
   - armv7
   - aarch64
+  - amd64
 options:
   db_host: "core-mariadb"
   db_port: 3306

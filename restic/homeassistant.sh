@@ -11,5 +11,4 @@ export RESTIC_HOST="homeassistant"
 bashio::log.info "Directories: $(bashio::config 'folders')"
 
 restic --help
-restic backup --host "homeassistant" \
-    test
+restic backup test

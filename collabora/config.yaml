@@ -6,6 +6,7 @@ init: false
 arch:
   - armv7
   - aarch64
+  - amd64
 options:
   PORT: 9980
   admin_username: "admin"
