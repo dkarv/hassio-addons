@@ -11,6 +11,8 @@ export RESTIC_HOST="homeassistant"
 bashio::log.info "Directories: $(bashio::config 'backup_directories')"
 # newline separated
 
+restic --help || echo "Restic failed"
+
 sleep 1000000
 
 restic --help

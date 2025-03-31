@@ -7,8 +7,8 @@ RUN apk add --no-cache \
 
 # Download restic
 ARG RESTIC_VERSION=0.18.0
-RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then ARCHITECTURE=amd64; elif [ "$TARGETPLATFORM" = "linux/arm/v7" ]; then ARCHITECTURE=arm; elif [ "$TARGETPLATFORM" = "linux/arm64" ]; then ARCHITECTURE=aarch64; else ARCHITECTURE=amd64; fi \
-    && curl -sL "https://github.com/restic/restic/releases/download/v${RESTIC_VERSION}/restic_${RESTIC_VERSION}_linux_${ARCHITECTURE}.bz2" \
+RUN PLATFORM=$(arch) && if [ "$PLATFORM" = "amd64" ]; then ARCH=amd64; elif [ "$PLATFORM" = "aarch64" ]; then ARCH=arm64; elif [ "$PLATFORM" = "arm64" ]; then ARCH=arm64; else ARCH=amd64; fi \
+    && curl -sL "https://github.com/restic/restic/releases/download/v${RESTIC_VERSION}/restic_${RESTIC_VERSION}_linux_${ARCH}.bz2" \
     | bzcat -d > /usr/bin/restic && \
     chmod +x /usr/bin/restic
 
