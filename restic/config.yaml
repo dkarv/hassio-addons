@@ -1,6 +1,6 @@
 name: "Restic"
 description: "Restic Backup"
-version: "0.18.0-10"
+version: "0.18.0-11"
 slug: "restic"
 init: false
 startup: "once"
