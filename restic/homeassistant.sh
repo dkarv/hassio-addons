@@ -8,8 +8,8 @@ bash -c "$(bashio::config 'before_script')"
 
 
 bashio::log.info "Setting up SSH key"
-mkdir -p .ssh
-bashio::config 'ssh_key' > .ssh/id_rsa
+mkdir -p /root/.ssh
+bashio::config 'ssh_key' > /root/.ssh/id_rsa
 chmod 600 .ssh/id_rsa
 
 
