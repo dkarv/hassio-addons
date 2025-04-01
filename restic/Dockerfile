@@ -13,7 +13,7 @@ RUN PLATFORM=$(arch) && if [ "$PLATFORM" = "amd64" ]; then ARCH=amd64; elif [ "$
     chmod +x /usr/bin/restic
 
 # For local development
-COPY dev/options.json /tmp/.bashio/addons.self.options.config.cache
+# COPY dev/options.json /tmp/.bashio/addons.self.options.config.cache
 
 COPY homeassistant.sh /homeassistant.sh
 
