@@ -2,18 +2,25 @@
 
 bashio::log.info "Starting restic backup"
 
-# TODO Dump databases
-
+mkdir -p .ssh
+bashio::config 'ssh_key' > .ssh/id_rsa
+chmod 600 .ssh/id_rsa
 
 export RESTIC_PASSWORD=$(bashio::config 'backup_password')
 export RESTIC_REPOSITORY=$(bashio::config 'backup_target')
 export RESTIC_HOST="homeassistant"
-bashio::log.info "Directories: $(bashio::config 'backup_directories')"
-# newline separated
+export BACKUP_DIRECTORIES=$(bashio::config 'backup_directories')
+export BACKUP_OPTIONS=$(bashio::config 'backup_options')
 
-restic --help || echo "Restic failed"
+if restic cat config >/dev/null 2>&1; then
+  bashio::log.info "Found existing restic repository"
+else
+  bashio::log.info "Initializing new restic repository"
+  restic init
+fi
 
-sleep 1000000
+# TODO Dump databases
 
-restic --help
-restic backup test
+bash -c "$(bashio::config 'before_script')"
+
+restic backup $BACKUP_OPTIONS $BACKUP_DIRECTORIES

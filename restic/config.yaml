@@ -1,6 +1,6 @@
 name: "Restic"
 description: "Restic Backup"
-version: "0.18.0-5"
+version: "0.18.0-7"
 slug: "restic"
 init: false
 startup: "once"
@@ -24,6 +24,9 @@ schema:
     - str
   backup_password: str
   backup_target: str
+  backup_options: str
+  before_script: str
+  ssh_key: str
 map:
   - "share:ro"
   - "media:ro"
