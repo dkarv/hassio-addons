@@ -1,11 +1,11 @@
 {
-  "databases": [{
-    "name": "db_name",
-    "user": "db_user",
-    "password": "db_pw"
-  }],
-  "folders": [{
-    "path": "/tmp/test"
-  }],
-  "target": "/todo"
+  "database_user": "user",
+  "database_password": "password",
+  "database_names": ["db1", "db2"],
+  "backup_directories": ["/tmp/test"],
+  "backup_password": "password",
+  "backup_target": "/todo",
+  "backup_options": "",
+  "before_script": "ls",
+  "ssh_key": "key content"
 }
