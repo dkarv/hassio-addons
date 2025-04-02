@@ -27,6 +27,7 @@ schema:
   backup_options: str?
   before_script: str?
   ssh_key: password?
+  ssh_fingerprint: str?
 map:
   - "share:ro"
   - "media:ro"
