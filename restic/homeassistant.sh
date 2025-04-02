@@ -9,8 +9,8 @@ bash -c "$(bashio::config 'before_script')"
 
 bashio::log.info "Setting up SSH key"
 mkdir -p /root/.ssh || bashio::log.warning "Failed to create .ssh directory"
-bashio::config 'ssh_key' > /root/.ssh/id_rsa || bashio::log.warning "Failed to get SSH key"
-chmod 600 /root/.ssh/id_rsa || bashio::log.warning "Failed to set permissions on SSH key"
+bashio::config 'ssh_key' > /root/.ssh/id_ed25519 || bashio::log.warning "Failed to get SSH key"
+chmod 600 /root/.ssh/id_ed25519 || bashio::log.warning "Failed to set permissions on SSH key"
 bashio::config 'ssh_fingerprint' > /root/.ssh/known_hosts || bashio::log.warning "Failed to get SSH fingerprint"
 
 
