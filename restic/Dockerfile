@@ -3,7 +3,8 @@ FROM $BUILD_FROM
 
 # Setup base
 RUN apk add --no-cache \
-    mariadb-client
+    mariadb-client \
+    openssh
 
 # Download restic
 ARG RESTIC_VERSION=0.18.0
