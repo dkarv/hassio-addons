@@ -3,10 +3,6 @@
 bashio::log.info "Starting restic backup"
 
 
-bashio::log.info "Running before_script"
-bash -c "$(bashio::config 'before_script')"
-
-
 bashio::log.info "Setting up SSH key"
 mkdir -p /root/.ssh || bashio::log.warning "Failed to create .ssh directory"
 bashio::config 'ssh_key' > /root/.ssh/id_ed25519 || bashio::log.warning "Failed to get SSH key"
@@ -20,6 +16,10 @@ export RESTIC_REPOSITORY=$(bashio::config 'backup_target')
 export RESTIC_HOST="homeassistant"
 export BACKUP_DIRECTORIES=$(bashio::config 'backup_directories')
 export BACKUP_OPTIONS=$(bashio::config 'backup_options')
+
+
+bashio::log.info "Running before_script"
+bash -c "$(bashio::config 'before_script')"
 
 
 bashio::log.info "Checking repository"
